@@ -1,0 +1,287 @@
+/* Reusable UI components and cards. */
+/* Fonte display para dar identidade a marca. */
+.logo {
+  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+}
+
+/* Botao exibido apenas no mobile. */
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Indicador com contador de itens do carrinho. */
+.cart-indicator {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+/* Cards pequenos do hero. */
+.highlight-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+/* Card principal no bloco visual do hero. */
+.hero-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.hero-tags span {
+  background: #fff3e6;
+  color: var(--accent-dark);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Elemento decorativo circular. */
+.hero-orb {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #ff8f6a 0%, #f8c59f 70%);
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+/* Card de produto com estrutura vertical. */
+.product-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Area superior do card para criar impacto visual. */
+.product-media {
+  position: relative;
+  height: 160px;
+  background: linear-gradient(140deg, #fbd9bd, #cfe8e3);
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Selo de categoria do produto. */
+.product-tag {
+  background: var(--card);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Letra gigante decorativa. */
+.product-letter {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.product-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.product-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+/* Botoes reutilizados em todo o site. */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Botao principal (acao forte). */
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 14px 24px rgba(242, 92, 47, 0.3);
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* Botao secundario (acao leve). */
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+/* Cards de formulario e carrinho seguem o mesmo estilo. */
+.cart-panel,
+.checkout-form,
+.contact-form {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.cart-list {
+  margin: 20px 0;
+}
+
+.cart-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Lista do carrinho sem estilos padrao de lista. */
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+/* Item individual do carrinho. */
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff7ef;
+}
+
+.cart-item h4 {
+  margin: 0;
+}
+
+.cart-item-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Link de remocao com aparencia discreta. */
+.cart-remove {
+  border: none;
+  background: transparent;
+  color: var(--accent-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Resumo com subtotal e entrega. */
+.cart-summary {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+  font-style: normal;
+  margin-left: 0;
+}
+
+/* Cards com canais de atendimento. */
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+/* FAQ com detalhes nativos do HTML. */
+details {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Card para depoimentos. */
+.testimonial-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}

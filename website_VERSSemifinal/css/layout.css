@@ -1,0 +1,172 @@
+/* Layout, grids, and main structure. */
+.site-header {
+  padding-bottom: 24px;
+}
+
+/* Cabecalho com logo, nav e indicador do carrinho. */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+  position: relative;
+}
+
+/* Navegacao horizontal no desktop. */
+.site-nav {
+  font-weight: 500;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  position: relative;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  width: 100%;
+}
+
+/* Hero com grid 2 colunas no desktop. */
+.hero {
+  padding: 32px 0 56px;
+}
+
+/* Grid central para texto + bloco visual. */
+.hero-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+  font-size: clamp(2.8rem, 4vw, 4.4rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 16px;
+}
+
+/* Botoes do hero. */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+/* Destaques em cards menores. */
+.hero-highlights {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 320px;
+}
+
+/* Titulos de secao com largura limitada. */
+.section-header {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.category {
+  margin-bottom: 48px;
+}
+
+.category-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+/* Grade de produtos padrao (3 colunas). */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Duas colunas para carrinho e compra. */
+.purchase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+/* Coluna de texto + formulario de contacto. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* Grade de testemunhos. */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Grade para politica e termos. */
+.policy-grid,
+.terms-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Rodape com divisao de links e nota final. */
+.site-footer {
+  padding: 48px 0 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--muted);
+}

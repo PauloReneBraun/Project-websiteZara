@@ -1,0 +1,79 @@
+<header class="site-header" id="topo">
+  <div class="container header-inner">
+    <a class="logo" href="#topo" aria-label="Ir para o topo">Zara</a>
+
+    <!-- Botao do menu mobile; JS controla o aria-expanded. -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="menu"
+    >
+      Menu
+    </button>
+
+    <!-- Navegacao interna com rolagem suave. -->
+    <nav class="site-nav" id="menu" aria-label="Navegacao principal">
+      <ul class="nav-list">
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#compras">Zona de compras</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#testemunhos">Testemunhos</a></li>
+        <li><a href="#politica">Politica</a></li>
+        <li><a href="#termos">Termos</a></li>
+      </ul>
+    </nav>
+
+    <!-- Quantidade de itens atualizada via JavaScript. -->
+    <div class="cart-indicator" aria-live="polite" aria-atomic="true">
+      <span>Itens</span>
+      <strong id="cart-count">0</strong>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="container hero-inner">
+      <!-- data-animate ativa animacao de entrada via JS. -->
+      <div class="hero-content" data-animate>
+        <p class="eyebrow">Loja com selecao local</p>
+        <h1>
+           estilo para viver.
+        </h1>
+        <p>
+          Catalogo com Calças, Sweatshirt e Tshirt numa experiencia simples,
+          rapida e responsiva.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#categorias">Ver produtos</a>
+          <a class="btn ghost" href="#compras">Zona de compras</a>
+        </div>
+        <div class="hero-highlights" role="list">
+          <div class="highlight-card" role="listitem">
+            <span>Entrega expressa</span>
+            <strong>48h nas principais cidades</strong>
+          </div>
+          <div class="highlight-card" role="listitem">
+            <span>Apoio humano</span>
+            <strong>Seg-Sab, 8h-20h</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco decorativo do hero, escondido de leitores de tela. -->
+      <div class="hero-visual" aria-hidden="true" data-animate>
+        <div class="hero-card">
+          <p class="eyebrow">Colecao 2026</p>
+          <h2>Zara</h2>
+          <p>Produtos pensados para quem Gosta.</p>
+          <div class="hero-tags">
+            <span>Leve</span>
+            <span>Duravel</span>
+            <span>Funcional</span>
+          </div>
+        </div>
+        <div class="hero-orb"></div>
+      </div>
+    </div>
+  </div>
+</header>

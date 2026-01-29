@@ -1,0 +1,131 @@
+/* Base theme variables and global resets. */
+:root {
+  --bg: #f6f2e8;
+  --bg-alt: #e7f0f2;
+  --ink: #1b1b1b;
+  --muted: #4d4d4d;
+  --accent: #f25c2f;
+  --accent-dark: #d94c22;
+  --accent-2: #1f8a70;
+  --card: #ffffff;
+  --line: #e1d7c5;
+  --shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
+  --radius: 22px;
+  --max-width: 1280px;
+}
+
+/* Scroll suave para navegacao interna. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset box model para facilitar calculo de tamanhos. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Cor, tipografia e background principal da pagina. */
+body {
+  margin: 0;
+  font-family: "Space Grotesk", Arial, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(130deg, var(--bg), var(--bg-alt));
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Link de salto aparece apenas quando focado. */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -40px;
+  background: var(--card);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: top 0.2s ease;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Destaque de foco para links e botoes. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Mensagem simples caso o componente nao carregue. */
+.component-error {
+  background: #fff1ef;
+  border: 1px solid var(--line);
+  color: #a32619;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+/* Formas decorativas no fundo para criar profundidade. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.35;
+}
+
+body::before {
+  top: -120px;
+  right: -160px;
+  background: radial-gradient(circle, #ffe1b8 0%, transparent 65%);
+}
+
+body::after {
+  bottom: -180px;
+  left: -120px;
+  background: radial-gradient(circle, #b8e0d8 0%, transparent 70%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
+  overflow: hidden;
+}
+
+/* Container centralizado com largura maxima definida. */
+.container {
+  width: min(100% - 32px, var(--max-width));
+  margin: 0 auto;
+}
+
+/* Espacamento padrao entre as secoes. */
+.section {
+  padding: 72px 0;
+}
+
+/* Rotulo pequeno para destacar contexto em cada secao. */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  margin: 0 0 10px;
+  font-weight: 600;
+}

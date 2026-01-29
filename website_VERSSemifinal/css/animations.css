@@ -1,0 +1,14 @@
+/* Entry animations for a more dynamic page. */
+/* Elementos com data-animate ficam ocultos ate entrar no viewport. */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+/* Classe aplicada pelo JS quando o elemento aparece. */
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zara - Loja Zara</title>
+    <!-- Fontes escolhidas para dar personalidade sem depender de fontes padrao. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS dividido por responsabilidade; a ordem garante cascata previsivel. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Link de salto para acessibilidade via teclado. -->
+    <a class="skip-link" href="#conteudo">Saltar para o conteudo</a>
+    <!-- Estrutura principal do site. -->
+    <div class="page">
+      <!-- Componentes carregados via JS a partir da pasta components. -->
+      <div data-include="components/header.html"></div>
+
+      <main id="conteudo" tabindex="-1">
+        <div data-include="components/categories.html"></div>
+        <div data-include="components/purchase.html"></div>
+        <div data-include="components/contact.html"></div>
+        <div data-include="components/faq.html"></div>
+        <div data-include="components/testimonials.html"></div>
+        <div data-include="components/policy.html"></div>
+        <div data-include="components/terms.html"></div>
+      </main>
+
+      <div data-include="components/footer.html"></div>
+    </div>
+
+    <!-- Scripts carregados em ordem para garantir dependencias. -->
+    <script src="js/components.js"></script>
+    <script src="js/utils/core.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

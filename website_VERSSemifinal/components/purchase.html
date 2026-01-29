@@ -1,0 +1,175 @@
+<!-- Zona de compras com carrinho e formulario de compra. -->
+<section
+  class="section purchase-section"
+  id="compras"
+  aria-labelledby="titulo-compras"
+>
+  <div class="container purchase-grid">
+    <div class="cart-panel" data-animate>
+      <div class="section-header">
+        <p class="eyebrow">Zona de compras</p>
+        <h2 id="titulo-compras">O seu carrinho</h2>
+        <p>
+          Adicione produtos e finalize a compra com os dados essenciais.
+        </p>
+      </div>
+
+      <!-- Lista do carrinho preenchida dinamicamente. -->
+      <div class="cart-list">
+        <p class="cart-empty" id="cart-empty">
+          Carrinho vazio. Escolha um produto acima.
+        </p>
+        <ul class="cart-items" id="cart-items" aria-label="Itens do carrinho"></ul>
+      </div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="cart-total">0,00 EUR</strong>
+        </div>
+        <div class="summary-row">
+          <span>Entrega</span>
+          <strong id="cart-shipping">Gratuita</strong>
+        </div>
+        <button class="btn ghost" id="clear-cart" type="button">
+          Limpar carrinho
+        </button>
+      </div>
+
+      <div class="form-feedback" id="cart-feedback" role="status"></div>
+    </div>
+
+    <!-- novalidate evita o popup nativo, usando validacao customizada. -->
+    <form
+      class="checkout-form"
+      id="checkout-form"
+      novalidate
+      data-animate
+      aria-labelledby="titulo-checkout"
+    >
+      <h3 id="titulo-checkout">Finalizar compra</h3>
+      <p>Preencha os dados para simular a compra.</p>
+
+      <div class="field">
+        <label for="checkout-name">Nome completo</label>
+        <input
+          id="checkout-name"
+          name="name"
+          type="text"
+          minlength="3"
+          required
+          autocomplete="name"
+          aria-describedby="error-checkout-name"
+        />
+        <!-- Erros exibidos pelo JS ao validar cada campo. -->
+        <small
+          class="error-msg"
+          id="error-checkout-name"
+          aria-live="polite"
+          aria-atomic="true"
+        ></small>
+      </div>
+
+      <div class="field">
+        <label for="checkout-email">Email</label>
+        <input
+          id="checkout-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          aria-describedby="error-checkout-email"
+        />
+        <small
+          class="error-msg"
+          id="error-checkout-email"
+          aria-live="polite"
+          aria-atomic="true"
+        ></small>
+      </div>
+
+      <div class="field">
+        <label for="checkout-phone">Telemovel</label>
+        <input
+          id="checkout-phone"
+          name="phone"
+          type="tel"
+          required
+          placeholder="Ex: 912345678"
+          autocomplete="tel"
+          inputmode="numeric"
+          aria-describedby="error-checkout-phone"
+        />
+        <small
+          class="error-msg"
+          id="error-checkout-phone"
+          aria-live="polite"
+          aria-atomic="true"
+        ></small>
+      </div>
+
+      <div class="field">
+        <label for="checkout-city">Cidade</label>
+        <input
+          id="checkout-city"
+          name="city"
+          type="text"
+          required
+          aria-describedby="error-checkout-city"
+        />
+        <small
+          class="error-msg"
+          id="error-checkout-city"
+          aria-live="polite"
+          aria-atomic="true"
+        ></small>
+      </div>
+
+      <div class="field">
+        <label for="checkout-payment">Forma de pagamento</label>
+        <select
+          id="checkout-payment"
+          name="payment"
+          required
+          aria-describedby="error-checkout-payment"
+        >
+          <option value="">Selecione</option>
+          <option value="cartao">Cartao de credito</option>
+          <option value="mbway">MB Way</option>
+          <option value="multibanco">Referencia Multibanco</option>
+        </select>
+        <small
+          class="error-msg"
+          id="error-checkout-payment"
+          aria-live="polite"
+          aria-atomic="true"
+        ></small>
+      </div>
+
+      <div class="field checkbox-field">
+        <input
+          id="checkout-terms"
+          name="terms"
+          type="checkbox"
+          required
+          aria-describedby="error-checkout-terms"
+        />
+        <label for="checkout-terms">
+          Li e aceito os <a href="#termos">Termos e Condicoes</a>.
+        </label>
+        <small
+          class="error-msg"
+          id="error-checkout-terms"
+          aria-live="polite"
+          aria-atomic="true"
+        ></small>
+      </div>
+
+      <button class="btn primary" type="submit">
+        Finalizar compra
+      </button>
+      <!-- Mensagem geral da compra (sucesso/erro). -->
+      <div class="form-feedback" id="checkout-feedback" role="status"></div>
+    </form>
+  </div>
+</section>

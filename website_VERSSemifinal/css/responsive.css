@@ -1,0 +1,100 @@
+/* Responsive layout for tablet and mobile, including 440px. */
+/* Tablet grande: reduz colunas. */
+@media (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonials-grid,
+  .policy-grid,
+  .terms-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .purchase-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet pequeno: menu vira dropdown. */
+@media (max-width: 840px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .site-nav {
+    display: none;
+    background: var(--card);
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+}
+
+/* Mobile: grades em uma coluna. */
+@media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid,
+  .policy-grid,
+  .terms-list,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile menor: ajusta cabecalho e botoes. */
+@media (max-width: 520px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cart-indicator {
+    order: 3;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Requisito do projeto: largura 440px. */
+@media (max-width: 440px) {
+  .container {
+    width: min(100% - 24px, var(--max-width));
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
