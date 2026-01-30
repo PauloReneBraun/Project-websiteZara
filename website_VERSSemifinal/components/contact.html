@@ -28,8 +28,13 @@
       data-animate
       aria-labelledby="titulo-contacto"
     >
+      <p class="form-note">
+        <span class="required-star" aria-hidden="true">*</span> Campo obrigatorio
+      </p>
       <div class="field">
-        <label for="contact-name">Nome</label>
+        <label for="contact-name"
+          >Nome <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="contact-name"
           name="name"
@@ -48,7 +53,9 @@
       </div>
 
       <div class="field">
-        <label for="contact-email">Email</label>
+        <label for="contact-email"
+          >Email <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="contact-email"
           name="email"
@@ -66,7 +73,9 @@
       </div>
 
       <div class="field">
-        <label for="contact-subject">Assunto</label>
+        <label for="contact-subject"
+          >Assunto <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="contact-subject"
           name="subject"
@@ -84,7 +93,9 @@
       </div>
 
       <div class="field">
-        <label for="contact-message">Mensagem</label>
+        <label for="contact-message"
+          >Mensagem <span class="required-star" aria-hidden="true">*</span></label
+        >
         <textarea
           id="contact-message"
           name="message"
@@ -113,7 +124,15 @@
           aria-describedby="error-contact-privacy"
         />
         <label for="contact-privacy">
-          Concordo com a <a href="#politica">Politica de Privacidade</a>.
+          Concordo com a
+          <a
+            href="policy.html"
+            target="_blank"
+            rel="noopener"
+            aria-label="Politica de Privacidade (abre em nova janela)"
+            >Politica de Privacidade</a
+          >.
+          <span class="required-star" aria-hidden="true">*</span>
         </label>
         <small
           class="error-msg"

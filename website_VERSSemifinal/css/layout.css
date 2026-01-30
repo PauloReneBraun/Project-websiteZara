@@ -111,6 +111,22 @@
   gap: 22px;
 }
 
+/* Detalhe do produto em duas colunas. */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.product-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 20px 0 6px;
+}
+
 /* Duas colunas para carrinho e compra. */
 .purchase-grid {
   display: grid;

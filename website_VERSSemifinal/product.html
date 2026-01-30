@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zara - Produto</title>
+    <!-- Fontes escolhidas para dar personalidade sem depender de fontes padrao. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS dividido por responsabilidade; a ordem garante cascata previsivel. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteudo</a>
+
+    <div class="page">
+      <header class="site-header" id="topo">
+        <div class="container header-inner">
+          <a class="logo" href="index.html" aria-label="Voltar ao inicio">Zara</a>
+
+          <nav class="site-nav" aria-label="Navegacao secundaria">
+            <ul class="nav-list">
+              <li><a href="index.html#categorias">Catalogo</a></li>
+              <li><a href="index.html#compras">Zona de compras</a></li>
+              <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <a class="btn ghost" href="index.html">Voltar ao site</a>
+        </div>
+      </header>
+
+      <main id="conteudo" tabindex="-1">
+        <section
+          class="section product-detail-section"
+          aria-labelledby="product-name"
+        >
+          <div class="container product-detail-grid" id="product-detail">
+            <div class="product-detail-media">
+              <img
+                id="product-image"
+                src="/imgs/Sweet_pkmnfrot.jpg"
+                alt=""
+              />
+            </div>
+            <div class="product-detail-info">
+              <p class="eyebrow" id="product-category">Produto</p>
+              <h1 id="product-name">Detalhe do produto</h1>
+              <p id="product-description">
+                Selecione um produto no catalogo para ver os detalhes.
+              </p>
+              <div class="product-detail-meta">
+                <span class="price" id="product-price"></span>
+                <a class="btn primary" href="index.html#compras">Comprar agora</a>
+              </div>
+              <p class="product-detail-note">
+                Clique em "Comprar agora" para finalizar na zona de compras.
+              </p>
+              <a class="btn ghost" href="index.html#categorias"
+                >Ver mais produtos</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="container product-detail-fallback"
+            id="product-fallback"
+            hidden
+          >
+            <strong>Produto nao encontrado.</strong>
+            <p>
+              Volte ao catalogo e escolha um item para visualizar.
+            </p>
+            <a class="btn ghost" href="index.html#categorias">Voltar</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <strong class="logo">Zara</strong>
+            <p>Loja de Roupas com foco em bem-estar.</p>
+          </div>
+          <div class="footer-links">
+            <a href="index.html#categorias">Catalogo</a>
+            <a href="index.html#compras">Zona de compras</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+          <div class="footer-links">
+            <a href="index.html#termos">Termos</a>
+            <a href="policy.html" target="_blank" rel="noopener">Politica</a>
+          </div>
+        </div>
+        <p class="footer-note">2026 Zara. Projeto academico.</p>
+      </footer>
+    </div>
+
+    <script src="js/utils/core.js"></script>
+    <script src="js/product.js"></script>
+  </body>
+</html>

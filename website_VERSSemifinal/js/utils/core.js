@@ -2,16 +2,16 @@
 // IIFE evita vazamento de variaveis no escopo global.
 (() => {
   // Namespace unico para compartilhar funcoes entre modulos.
-  const OrlaFit = (window.OrlaFit = window.OrlaFit || {});
+  const Zara = (window.Zara = window.Zara || {});
 
   // Atalhos para querySelector e querySelectorAll.
-  OrlaFit.qs = (selector, scope = document) => scope.querySelector(selector);
-  OrlaFit.qsa = (selector, scope = document) => [
+  Zara.qs = (selector, scope = document) => scope.querySelector(selector);
+  Zara.qsa = (selector, scope = document) => [
     ...scope.querySelectorAll(selector),
   ];
 
   // Formata numero para moeda (pt-PT simples) sem usar Intl.
-  OrlaFit.currencyFormat = (value) => {
+  Zara.currencyFormat = (value) => {
     const number = Number(value) || 0;
     const fixed = number.toFixed(2);
     const [intPart, decimalPart] = fixed.split(".");
@@ -20,7 +20,7 @@
   };
 
   // Mostra mensagens temporarias de feedback ao usuario.
-  OrlaFit.showFeedback = (element, message, isError = false) => {
+  Zara.showFeedback = (element, message, isError = false) => {
     if (!element) return;
     if (element._timer) {
       window.clearTimeout(element._timer);
@@ -36,9 +36,9 @@
   };
 
   // Associa o erro ao campo certo usando id + aria.
-  OrlaFit.setFieldError = (field, message) => {
+  Zara.setFieldError = (field, message) => {
     if (!field) return;
-    const errorElement = OrlaFit.qs(`#error-${field.id}`);
+    const errorElement = Zara.qs(`#error-${field.id}`);
     if (!errorElement) return;
     errorElement.textContent = message;
     const hasError = Boolean(message);
@@ -47,29 +47,29 @@
   };
 
   // Regex simples para validar email.
-  OrlaFit.validateEmail = (value) => {
+  Zara.validateEmail = (value) => {
     const trimmed = value.trim();
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
   };
 
   // Valida telemovel usando apenas digitos (indicativo + numero).
-  OrlaFit.validatePhone = (value) => {
+  Zara.validatePhone = (value) => {
     const digits = value.replace(/\D/g, "");
     return digits.length >= 9 && digits.length <= 13;
   };
 
   // Valida campos obrigatorios e checkbox.
-  OrlaFit.validateRequired = (field, message) => {
+  Zara.validateRequired = (field, message) => {
     const isCheckbox = field.type === "checkbox";
     const isValid = isCheckbox ? field.checked : field.value.trim().length > 0;
-    OrlaFit.setFieldError(field, isValid ? "" : message);
+    Zara.setFieldError(field, isValid ? "" : message);
     return isValid;
   };
 
   // Valida tamanho minimo de texto.
-  OrlaFit.validateMinLength = (field, length, message) => {
+  Zara.validateMinLength = (field, length, message) => {
     const isValid = field.value.trim().length >= length;
-    OrlaFit.setFieldError(field, isValid ? "" : message);
+    Zara.setFieldError(field, isValid ? "" : message);
     return isValid;
   };
 })();

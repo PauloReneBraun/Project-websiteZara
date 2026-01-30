@@ -49,9 +49,14 @@
     >
       <h3 id="titulo-checkout">Finalizar compra</h3>
       <p>Preencha os dados para simular a compra.</p>
+      <p class="form-note">
+        <span class="required-star" aria-hidden="true">*</span> Campo obrigatorio
+      </p>
 
       <div class="field">
-        <label for="checkout-name">Nome completo</label>
+        <label for="checkout-name"
+          >Nome completo <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="checkout-name"
           name="name"
@@ -71,7 +76,9 @@
       </div>
 
       <div class="field">
-        <label for="checkout-email">Email</label>
+        <label for="checkout-email"
+          >Email <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="checkout-email"
           name="email"
@@ -89,7 +96,9 @@
       </div>
 
       <div class="field">
-        <label for="checkout-phone">Telemovel</label>
+        <label for="checkout-phone"
+          >Telemovel <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="checkout-phone"
           name="phone"
@@ -109,7 +118,9 @@
       </div>
 
       <div class="field">
-        <label for="checkout-city">Cidade</label>
+        <label for="checkout-city"
+          >Cidade <span class="required-star" aria-hidden="true">*</span></label
+        >
         <input
           id="checkout-city"
           name="city"
@@ -126,7 +137,10 @@
       </div>
 
       <div class="field">
-        <label for="checkout-payment">Forma de pagamento</label>
+        <label for="checkout-payment"
+          >Forma de pagamento
+          <span class="required-star" aria-hidden="true">*</span></label
+        >
         <select
           id="checkout-payment"
           name="payment"
@@ -156,6 +170,7 @@
         />
         <label for="checkout-terms">
           Li e aceito os <a href="#termos">Termos e Condicoes</a>.
+          <span class="required-star" aria-hidden="true">*</span>
         </label>
         <small
           class="error-msg"

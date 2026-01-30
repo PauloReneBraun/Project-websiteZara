@@ -38,20 +38,57 @@
       const title = document.createElement("h4");
       title.textContent = item.name;
       const meta = document.createElement("p");
-      meta.textContent = `Qtd: ${item.qty} | ${currencyFormat(
-        item.price * item.qty
-      )}`;
+      meta.textContent = `Subtotal: ${currencyFormat(item.price * item.qty)}`;
       info.append(title, meta);
 
       // Botao para remover item individual.
       const actions = document.createElement("div");
       actions.className = "cart-item-actions";
+      const qtyControl = document.createElement("div");
+      qtyControl.className = "qty-control";
+
+      const decreaseButton = document.createElement("button");
+      decreaseButton.type = "button";
+      decreaseButton.className = "qty-btn";
+      decreaseButton.textContent = "−";
+      decreaseButton.setAttribute(
+        "aria-label",
+        `Diminuir quantidade de ${item.name}`
+      );
+      decreaseButton.addEventListener("click", () => adjustItemQty(item.id, -1));
+
+      const qtyInput = document.createElement("input");
+      qtyInput.type = "number";
+      qtyInput.className = "qty-input";
+      qtyInput.min = "0";
+      qtyInput.value = String(item.qty);
+      qtyInput.setAttribute(
+        "aria-label",
+        `Quantidade de ${item.name}`
+      );
+      qtyInput.addEventListener("change", () => {
+        const next = Number(qtyInput.value);
+        setItemQty(item.id, next);
+      });
+
+      const increaseButton = document.createElement("button");
+      increaseButton.type = "button";
+      increaseButton.className = "qty-btn";
+      increaseButton.textContent = "+";
+      increaseButton.setAttribute(
+        "aria-label",
+        `Aumentar quantidade de ${item.name}`
+      );
+      increaseButton.addEventListener("click", () => adjustItemQty(item.id, 1));
+
+      qtyControl.append(decreaseButton, qtyInput, increaseButton);
+
       const removeButton = document.createElement("button");
       removeButton.type = "button";
       removeButton.className = "cart-remove";
       removeButton.textContent = "Remover";
       removeButton.addEventListener("click", () => removeItem(item.id));
-      actions.append(removeButton);
+      actions.append(qtyControl, removeButton);
 
       li.append(info, actions);
       if (ui.items) {
@@ -100,6 +137,28 @@
     showFeedback(ui.feedback, "Item removido do carrinho.");
   };
 
+  // Ajusta a quantidade somando ou subtraindo.
+  const adjustItemQty = (id, delta) => {
+    const item = state.get(id);
+    if (!item) return;
+    const nextQty = item.qty + delta;
+    setItemQty(id, nextQty);
+  };
+
+  // Define a quantidade diretamente (0 remove).
+  const setItemQty = (id, qty) => {
+    const item = state.get(id);
+    if (!item) return;
+    const nextQty = Number(qty);
+    if (!Number.isFinite(nextQty) || nextQty < 0) return;
+    if (nextQty === 0) {
+      removeItem(id);
+      return;
+    }
+    item.qty = Math.max(1, Math.floor(nextQty));
+    updateCartUI();
+  };
+
   // Limpa o carrinho por completo.
   const clearCart = () => {
     const ui = getUI();
@@ -129,6 +188,8 @@
     updateCartUI,
     addItemFromCard,
     removeItem,
+    adjustItemQty,
+    setItemQty,
     clearCart,
     formatProductPrices,
     isEmpty,

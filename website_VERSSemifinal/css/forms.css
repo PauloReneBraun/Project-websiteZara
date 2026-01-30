@@ -6,6 +6,17 @@
   margin-bottom: 14px;
 }
 
+.form-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.required-star {
+  color: #a32619;
+  font-weight: 700;
+}
+
 /* Estilos base para campos de texto. */
 input,
 select,
